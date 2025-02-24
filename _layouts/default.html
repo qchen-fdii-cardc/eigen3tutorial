@@ -76,12 +76,10 @@
     </div>
     <main class="main-content">
       <div class="chapter-navigation">
-        {% if page.previous.url %}
-        <a href="{{ page.previous.url | relative_url }}" class="previous">上一章</a>
-        {% endif %}
-        {% if page.next.url %}
-        <a href="{{ page.next.url | relative_url }}" class="next">下一章</a>
-        {% endif %}
+        <p>Site Pages Count: {{site.pages.size}}</p>
+        {$ for page_i in site.pages %}
+        <p>{{page_i.path}}</p>
+        {$ endfor $}
       </div>
       {{ content }}
     </main>
