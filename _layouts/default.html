@@ -80,7 +80,11 @@
         {% assign current_index = sorted_pages | index_of: page %}
         {% assign previous_page = sorted_pages | at: current_index | minus: 1 %}
         {% assign next_page = sorted_pages | at: current_index | plus: 1 %}
-        {{ current_index }} {{ previous_page }} {{ next_page }}
+        <p>
+        {{ current_index }} /  {{ sorted_pages.size }}          
+        </p>
+
+
         {% if current_index > 0 %}
         <a href="{{ previous_page.url | relative_url }}" class="previous-chapter">上一章: {{ previous_page.title | default:
           previous_page.path | split: '/' | last | split: '.' | first }}</a>
