@@ -23,6 +23,8 @@ plugins:
   - jekyll-sitemap
   - jekyll-remote-theme
   - jekyll-readme-index   # Add this plugin to use README.md as index
+  - jekyll-paginate       # Add this plugin to enable page.previous and page.next
+
 
 # Readme settings
 readme_index:
