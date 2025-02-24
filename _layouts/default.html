@@ -7,10 +7,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   {% seo %}
-  <link rel="stylesheet" href="{{ "assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
+  <link rel="stylesheet" href="{{ " assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
   {% include head-custom.html %}
 
-  <!-- Mermaid -->
+  <!-- Mermaid 
   <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function () {
@@ -29,7 +29,11 @@
       });
     });
   </script>
-
+-->
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true });
+  </script>
   <style>
     .sidebar {
       position: fixed;
