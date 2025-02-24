@@ -1,3 +1,11 @@
+<script type="module">
+	import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+	mermaid.initialize({
+		startOnLoad: true,
+		theme: 'dark'
+	});
+</script>
+
 # Eigen 教程
 
 这是一个 Eigen C++ 线性代数库的教程项目，包含了从基础到高级的示例代码。

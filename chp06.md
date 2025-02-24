@@ -1,3 +1,37 @@
+# Eigen 教程
+
+## 教程目录
+1. [基础知识](chp01.md)
+   - 基本矩阵操作
+   - 矩阵运算
+   - 特殊矩阵
+2. [矩阵操作](chp02.md)
+   - 矩阵基本操作
+   - 矩阵分解
+3. [向量操作](chp03.md)
+   - 向量基本操作
+   - 向量高级特性
+4. [线性方程](chp04.md)
+   - 线性方程求解
+   - 最小二乘法
+5. [特征值](chp05.md)
+   - 特征值计算
+   - PCA实例
+6. [几何变换](chp06.md)
+   - 变换矩阵
+   - 旋转矩阵
+7. [高级特性](chp07.md)
+   - 稀疏矩阵
+   - 高级功能
+
+<script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({
+        startOnLoad: true,
+        theme: 'dark'
+    });
+</script>
+
 # 第六章：几何变换
 
 ## 类层次结构
