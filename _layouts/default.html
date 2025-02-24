@@ -31,7 +31,7 @@
         const link = document.createElement('a');
         link.href = `#${heading.id}`;
         link.textContent = heading.textContent;
-        if (heading.tagName === "h2") {
+        if (heading.tagName.toLowerCase() === "h2") {
           link.style.marginLeft = '0px';
           link.style.fontWeight = 'bold';
         } else {
