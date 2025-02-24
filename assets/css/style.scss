@@ -8,27 +8,25 @@
 // Layout
 .wrapper {
   display: flex;
-  min-height: 100vh;
   width: 100%;
+  height: 100vh;  // Full viewport height
   position: relative;
-  overflow: hidden;
+  overflow: hidden;  // Prevent body scroll
 }
 
 // Sidebar
 .sidebar {
-  position: fixed;
-  left: 0;
-  top: 0;
-  bottom: 0;
   width: 250px;
   background: #f8f9fa;
   padding: 20px;
-  overflow-y: auto;
+  overflow-y: auto;  // Scrollable
   border-right: 1px solid #dee2e6;
-  z-index: 100;
-  height: 100vh;
+  flex: 0 0 250px;  // Fixed width, don't grow or shrink
+  height: 100vh;  // Full height
+  position: sticky;  // Stay in view
+  top: 0;
+  left: 0;
   box-sizing: border-box;
-  flex-shrink: 0;
 
   ul {
     list-style: none;
@@ -71,16 +69,13 @@
   }
 }
 
-// Main content
+// Main content container
 .main-content {
   flex: 1;
-  margin-left: 250px;
   padding: 2rem 4rem;
-  width: calc(100% - 250px);
+  overflow-y: auto;  // Enable scrolling
+  height: 100vh;  // Full height
   box-sizing: border-box;
-  overflow-y: auto;
-  height: 100vh;
-  position: relative;
 
   h1, h2, h3, h4, h5, h6 {
     margin-top: 2.5rem;
@@ -212,21 +207,20 @@
 @media screen and (max-width: 768px) {
   .wrapper {
     flex-direction: column;
-    overflow: auto;
+    height: auto;
+    overflow: visible;
   }
 
   .sidebar {
     position: static;
     width: 100%;
     height: auto;
+    flex: none;
     display: none;
   }
 
   .main-content {
-    margin-left: 0;
-    width: 100%;
     height: auto;
-    overflow: visible;
     padding: 2rem;
   }
 }

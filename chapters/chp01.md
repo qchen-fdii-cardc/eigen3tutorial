@@ -277,6 +277,7 @@ CommaInitializer operator<<(Matrix& mat, const T& val) {
 - 类型安全检查
 
 4. 编译期优化
+
 ```cpp
 // 编译器会将这样的代码
 Matrix3d m;
@@ -313,6 +314,7 @@ m(2,0) = 7; m(2,1) = 8; m(2,2) = 9;
    - 最高效的访问方式
    - 无边界检查，适用于确保安全的场景
    - 支持左值引用，可以修改元素
+
    ```cpp
    matrix(0,0) = 1.0;  // 直接修改元素
    ```
@@ -321,6 +323,7 @@ m(2,0) = 7; m(2,1) = 8; m(2,2) = 9;
    - 包含边界检查，更安全但略微降低性能
    - 用于需要保证安全的场景
    - 也提供 coeffRef() 用于可修改访问
+
    ```cpp
    double val = matrix.coeff(i,j);     // 只读访问
    matrix.coeffRef(i,j) = 2.0;         // 可修改访问
@@ -330,6 +333,7 @@ m(2,0) = 7; m(2,1) = 8; m(2,2) = 9;
    - 返回行或列的视图，不会复制数据
    - 支持进一步的向量运算
    - 可以与其他向量或矩阵块组合使用
+
    ```cpp
    auto row = matrix.row(0);           // 获取第一行
    Vector3d col = matrix.col(1);       // 获取第二列并复制
@@ -348,6 +352,7 @@ m(2,0) = 7; m(2,1) = 8; m(2,2) = 9;
    - 编译期确定大小，性能最优
    - 模板参数指定块大小
    - 适用于大小固定的场景
+
    ```cpp
    Matrix4d m;
    auto block = m.block<2,2>(1,1);  // 提取2x2块，起始于(1,1)
@@ -357,12 +362,14 @@ m(2,0) = 7; m(2,1) = 8; m(2,2) = 9;
    - 运行时确定大小，更灵活
    - 参数指定起始位置和块大小
    - 适用于大小可变的场景
+
    ```cpp
    MatrixXd m(4,4);
    auto block = m.block(1,1,2,2);  // 同样提取2x2块
    ```
 
 3. 特殊块操作
+
    ```cpp
    // 头部和尾部块
    auto topRows = m.topRows(2);      // 前2行
@@ -379,6 +386,7 @@ m(2,0) = 7; m(2,1) = 8; m(2,2) = 9;
    - 可以用于矩阵分块计算
    - 支持赋值和运算操作
    - 创建矩阵视图，不会复制数据
+
    ```cpp
    Matrix4d m = Matrix4d::Random();
    m.block<2,2>(0,0) = Matrix2d::Identity();  // 替换左上角为单位矩阵
@@ -394,6 +402,7 @@ m(2,0) = 7; m(2,1) = 8; m(2,2) = 9;
 矩阵属性操作提供了丰富的矩阵信息查询和计算功能：
 
 1. 基本属性
+
    ```cpp
    Matrix3d m = Matrix3d::Random();
    int rows = m.rows();      // 行数
@@ -403,6 +412,7 @@ m(2,0) = 7; m(2,1) = 8; m(2,2) = 9;
    ```
 
 2. 统计属性
+
    ```cpp
    double maxVal = m.maxCoeff();  // 最大元素
    double minVal = m.minCoeff();  // 最小元素
@@ -412,6 +422,7 @@ m(2,0) = 7; m(2,1) = 8; m(2,2) = 9;
    ```
 
 3. 带索引的最值查找
+
    ```cpp
    Matrix3d m = Matrix3d::Random();
    Index maxRow, maxCol;
@@ -422,6 +433,7 @@ m(2,0) = 7; m(2,1) = 8; m(2,2) = 9;
    ```
 
 4. 范数计算
+
    ```cpp
    double norm1 = m.lpNorm<1>();      // L1范数
    double norm2 = m.norm();           // L2范数（默认）
@@ -429,6 +441,7 @@ m(2,0) = 7; m(2,1) = 8; m(2,2) = 9;
    ```
 
 5. 其他属性
+
    ```cpp
    bool isZero = m.isZero();           // 是否为零矩阵
    bool isOnes = m.isOnes();           // 是否为全1矩阵
@@ -445,6 +458,7 @@ m(2,0) = 7; m(2,1) = 8; m(2,2) = 9;
 ## 代码示例说明
 
 ### basic_matrix.cpp
+
 ```cpp
 #include <Eigen/Dense>
 using namespace Eigen;
@@ -494,6 +508,7 @@ int main() {
    - 逗号初始化器：直观的矩阵填充方式
 
 ### matrix_arithmetic.cpp
+
 ```cpp
 #include <Eigen/Dense>
 using namespace Eigen;
@@ -549,6 +564,7 @@ int main() {
    - 使用表达式模板优化计算
 
 ### special_matrices.cpp
+
 ```cpp
 #include <Eigen/Dense>
 using namespace Eigen;
