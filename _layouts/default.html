@@ -11,13 +11,21 @@
   {% include head-custom.html %}
 
   <!-- Mermaid -->
-  <script src="https://cdn.jsdelivr.net/npm/mermaid@{{ site.mermaid.version }}/dist/mermaid.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       mermaid.initialize({
         startOnLoad: true,
-        theme: JSON.parse('{{ site.mermaid.theme | jsonify }}').theme,
-        themeVariables: JSON.parse('{{ site.mermaid.theme | jsonify }}').themeVariables
+        theme: 'default',
+        securityLevel: 'loose',
+        themeVariables: {
+          primaryColor: '#0366d6',
+          primaryTextColor: '#fff',
+          primaryBorderColor: '#0366d6',
+          lineColor: '#384d6a',
+          secondaryColor: '#384d6a',
+          tertiaryColor: '#fff'
+        }
       });
     });
   </script>
@@ -88,6 +96,16 @@
       margin-bottom: 10px;
       font-size: 1.1em;
       color: #24292e;
+    }
+
+    /* Add Mermaid specific styles */
+    .mermaid {
+      margin: 2rem 0;
+      text-align: center;
+      background: #fff;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     }
   </style>
 </head>

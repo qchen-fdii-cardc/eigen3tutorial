@@ -8,8 +8,52 @@
 .main-content {
   max-width: 64rem;
   padding: 2rem 6rem;
-  margin: 0 auto;
+  margin: auto auto;
   font-size: 1.1rem;
+  
+  // Add more spacing between elements
+  h1, h2, h3, h4, h5, h6 {
+    margin-top: 2.5rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #eaecef;
+  }
+
+  h1 {
+    margin-top: 1rem;  // Less space at the top of the page
+  }
+
+  p {
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+  }
+
+  ul, ol {
+    margin-bottom: 1.5rem;
+    padding-left: 2rem;
+    
+    li {
+      margin-bottom: 0.5rem;
+      line-height: 1.8;
+    }
+  }
+
+  pre {
+    margin: 2rem 0;
+  }
+
+  blockquote {
+    margin: 2rem 0;
+    padding: 1rem 2rem;
+    border-left: 0.25rem solid #0366d6;
+    background-color: #f6f8fa;
+  }
+
+  hr {
+    margin: 2.5rem 0;
+    height: 2px;
+    background-color: #eaecef;
+  }
 }
 
 @media screen and (max-width: 64em) {
@@ -28,14 +72,18 @@
 .highlight {
   background-color: #f6f8fa;
   border-radius: 3px;
-  margin-bottom: 1rem;
+  margin: 2rem 0;  // Increased margin
+  
+  pre {
+    margin: 0;  // Reset margin for pre inside highlight
+  }
 }
 
 pre {
   padding: 16px;
   overflow: auto;
   font-size: 85%;
-  line-height: 1.45;
+  line-height: 1.6;  // Increased line height
   background-color: #f6f8fa;
   border-radius: 3px;
 }
@@ -43,30 +91,37 @@ pre {
 // Home page styles
 .home {
   h1 {
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;  // Increased margin
   }
 
   h2 {
-    margin-top: 2rem;
-    margin-bottom: 1rem;
+    margin-top: 3rem;  // Increased margin
+    margin-bottom: 1.5rem;
   }
 
   .chapter-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
+    gap: 2.5rem;  // Increased gap
+    margin: 2.5rem 0;  // Increased margin
   }
 
   .chapter {
     background: #f8f9fa;
-    padding: 1.5rem;
+    padding: 2rem;  // Increased padding
     border-radius: 8px;
     border: 1px solid #dee2e6;
+    transition: transform 0.2s ease-in-out;
+
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
 
     h3 {
       margin-top: 0;
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
+      border-bottom: none;
       
       a {
         color: #0366d6;
@@ -81,6 +136,10 @@ pre {
     ul {
       margin: 0;
       padding-left: 1.5rem;
+      
+      li {
+        margin-bottom: 0.75rem;
+      }
     }
   }
 } 

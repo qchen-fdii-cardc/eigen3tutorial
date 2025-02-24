@@ -32,19 +32,7 @@ readme_index:
 
 # Mermaid settings
 mermaid:
-  version: "10.6.1"  # Mermaid version
-  theme: |
-    {
-      "theme": "dark",
-      "themeVariables": {
-        "primaryColor": "#BB2528",
-        "primaryTextColor": "#fff",
-        "primaryBorderColor": "#7C0000",
-        "lineColor": "#F8B229",
-        "secondaryColor": "#006100",
-        "tertiaryColor": "#fff"
-      }
-    }
+  version: "latest"
 
 # Additional scripts
 head_scripts:
