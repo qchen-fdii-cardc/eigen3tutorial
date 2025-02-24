@@ -9,29 +9,24 @@
 .wrapper {
   display: flex;
   width: 100%;
-  min-height: 100vh;
-  position: relative;
+  height: 100vh;  // Full viewport height
+  overflow: hidden;  // Prevent body scroll
 }
 
-// Sidebar container (新增)
+// Sidebar container
 .sidebar-container {
-  flex: 0 0 250px;  // Fixed width, don't grow or shrink
-  position: relative;
+  width: 250px;
+  flex-shrink: 0;  // Prevent shrinking
+  background: #f8f9fa;
+  border-right: 1px solid #dee2e6;
+  overflow-y: auto;  // Enable container scroll
+  height: 100vh;
 }
 
 // Sidebar
 .sidebar {
-  position: fixed;  // Fixed to viewport
-  top: 0;
-  left: 0;
-  width: 250px;
-  height: 100vh;  // Full viewport height
-  background: #f8f9fa;
   padding: 20px;
-  overflow: auto;  // Scrollable
-  border-right: 1px solid #dee2e6;
   box-sizing: border-box;
-  z-index: 100;  // Ensure sidebar stays on top
 
   ul {
     list-style: none;
@@ -78,7 +73,9 @@
 .main-content {
   flex: 1;  // Take remaining space
   padding: 2rem 4rem;
-  padding-top: 0;  // Remove top padding
+  padding-top: 0;
+  overflow-y: auto;  // Enable content scroll
+  height: 100vh;
   box-sizing: border-box;
   overscroll-behavior: contain;
 
