@@ -7,9 +7,9 @@ using namespace std;
 int main()
 {
      // 固定大小矩阵
-     auto m1 = Matrix3d::Zero();     // 零矩阵
-     auto m2 = Matrix3d::Identity(); // 单位矩阵
-     Matrix3d m3;                    // 未初始化矩阵
+     Matrix3d m1 = Matrix3d::Zero();     // 零矩阵
+     Matrix3d m2 = Matrix3d::Identity(); // 单位矩阵
+     Matrix3d m3;                        // 未初始化矩阵
      m3 << 1, 2, 3,
          4, 5, 6,
          7, 8, 9;
@@ -33,7 +33,7 @@ int main()
      cout << "m3(1,2) = " << m3(1, 2) << "\n\n";
 
      // 矩阵块操作
-     auto block = m3.block<2, 2>(0, 0);
+     Block<Matrix3d, 2, 2> block = m3.block<2, 2>(0, 0);
      cout << "m3的左上2x2块:\n"
           << block << "\n\n";
 

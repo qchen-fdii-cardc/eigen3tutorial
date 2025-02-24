@@ -55,3 +55,6 @@ foreach(target
     sparse_matrix advanced_features)
     target_link_libraries(${target} Eigen3::Eigen)
 endforeach() 
+
+
+message(STATUS "BUILD_TYPE: ${CMAKE_BUILD_TYPE}")
