@@ -13,6 +13,12 @@
   position: relative;
 }
 
+// Sidebar container (新增)
+.sidebar-container {
+  flex: 0 0 250px;  // Fixed width, don't grow or shrink
+  position: relative;
+}
+
 // Sidebar
 .sidebar {
   position: fixed;  // Fixed to viewport
@@ -70,22 +76,22 @@
 
 // Main content container
 .main-content {
-  margin-left: 250px;  // Match sidebar width
+  flex: 1;  // Take remaining space
   padding: 2rem 4rem;
-  width: calc(100% - 250px);  // Full remaining width
-  min-height: 100vh;
+  padding-top: 0;  // Remove top padding
   box-sizing: border-box;
   overscroll-behavior: contain;
 
   h1, h2, h3, h4, h5, h6 {
-    margin-top: 2.5rem;
+    margin-top: 2rem;  // Reduced from 2.5rem
     margin-bottom: 1.5rem;
     padding-bottom: 0.5rem;
     border-bottom: 1px solid #eaecef;
   }
 
   h1 {
-    margin-top: 1rem;
+    margin-top: 2rem;  // Consistent with other headings
+    padding-top: 2rem;  // Add some space at the very top
   }
 
   p {
@@ -220,6 +226,7 @@
     margin-left: 0;
     width: 100%;
     padding: 2rem;
+    padding-top: 1rem;  // Restore some top padding on mobile
   }
 }
 

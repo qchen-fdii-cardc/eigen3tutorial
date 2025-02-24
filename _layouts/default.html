@@ -26,46 +26,47 @@
 
 <body>
   <div class="wrapper">
-    <nav class="sidebar">
-      <div class="sidebar-header">
-        <h2>{{ site.title }}</h2>
-      </div>
-      <div class="sidebar-section">
-        <h3>教程目录</h3>
-        <ul>
-          <li><a href="{{ site.baseurl }}/chapters/chp01.html" {% if page.url contains 'chp01' %}class="active" {% endif
-              %}>1. 基础知识</a>
-          </li>
-          <li><a href="{{ site.baseurl }}/chapters/chp02.html" {% if page.url contains 'chp02' %}class="active" {% endif
-              %}>2. 矩阵操作</a>
-          </li>
-          <li><a href="{{ site.baseurl }}/chapters/chp03.html" {% if page.url contains 'chp03' %}class="active" {% endif
-              %}>3. 向量操作</a>
-          </li>
-          <li><a href="{{ site.baseurl }}/chapters/chp04.html" {% if page.url contains 'chp04' %}class="active" {% endif
-              %}>4. 线性方程</a>
-          </li>
-          <li><a href="{{ site.baseurl }}/chapters/chp05.html" {% if page.url contains 'chp05' %}class="active" {% endif
-              %}>5. 特征值</a>
-          </li>
-          <li><a href="{{ site.baseurl }}/chapters/chp06.html" {% if page.url contains 'chp06' %}class="active" {% endif
-              %}>6. 几何变换</a>
-          </li>
-          <li><a href="{{ site.baseurl }}/chapters/chp07.html" {% if page.url contains 'chp07' %}class="active" {% endif
-              %}>7. 高级特性</a>
-          </li>
-        </ul>
-      </div>
-      <div class="sidebar-section">
-        <h3>快速链接</h3>
-        <ul>
-          <li><a href="{{ site.baseurl }}/">首页</a></li>
-          <li><a href="https://github.com/qchen-fdii-cardc/eigen3tutorial">GitHub</a></li>
-          <li><a href="https://www.windtunnel.cn">大福是小强</a></li>
-        </ul>
-      </div>
-    </nav>
-
+    <div class="sidebar-container">
+      <nav class="sidebar">
+        <div class="sidebar-header">
+          <h2>{{ site.title }}</h2>
+        </div>
+        <div class="sidebar-section">
+          <h3>教程目录</h3>
+          <ul>
+            <li><a href="{{ site.baseurl }}/chapters/chp01.html" {% if page.url contains 'chp01' %}class="active" {%
+                endif %}>1. 基础知识</a>
+            </li>
+            <li><a href="{{ site.baseurl }}/chapters/chp02.html" {% if page.url contains 'chp02' %}class="active" {%
+                endif %}>2. 矩阵操作</a>
+            </li>
+            <li><a href="{{ site.baseurl }}/chapters/chp03.html" {% if page.url contains 'chp03' %}class="active" {%
+                endif %}>3. 向量操作</a>
+            </li>
+            <li><a href="{{ site.baseurl }}/chapters/chp04.html" {% if page.url contains 'chp04' %}class="active" {%
+                endif %}>4. 线性方程</a>
+            </li>
+            <li><a href="{{ site.baseurl }}/chapters/chp05.html" {% if page.url contains 'chp05' %}class="active" {%
+                endif %}>5. 特征值</a>
+            </li>
+            <li><a href="{{ site.baseurl }}/chapters/chp06.html" {% if page.url contains 'chp06' %}class="active" {%
+                endif %}>6. 几何变换</a>
+            </li>
+            <li><a href="{{ site.baseurl }}/chapters/chp07.html" {% if page.url contains 'chp07' %}class="active" {%
+                endif %}>7. 高级特性</a>
+            </li>
+          </ul>
+        </div>
+        <div class="sidebar-section">
+          <h3>快速链接</h3>
+          <ul>
+            <li><a href="{{ site.baseurl }}/">首页</a></li>
+            <li><a href="https://github.com/qchen-fdii-cardc/eigen3tutorial">GitHub</a></li>
+            <li><a href="https://www.windtunnel.cn">大福是小强</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
     <main class="main-content">
       {{ content }}
     </main>
