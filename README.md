@@ -1,29 +1,34 @@
+---
+layout: default
+title: Eigen 教程
+permalink: /
+---
 
 # Eigen 教程
 
 这是一个 Eigen C++ 线性代数库的教程项目，包含了从基础到高级的示例代码。
 
 ## 教程目录
-1. [基础知识](chp01.md)
+1. [基础知识](chapters/chp01.html)
    - 基本矩阵操作
    - 矩阵运算
    - 特殊矩阵
-2. [矩阵操作](chp02.md)
+2. [矩阵操作](chapters/chp02.html)
    - 矩阵基本操作
    - 矩阵分解
-3. [向量操作](chp03.md)
+3. [向量操作](chapters/chp03.html)
    - 向量基本操作
    - 向量高级特性
-4. [线性方程](chp04.md)
+4. [线性方程](chapters/chp04.html)
    - 线性方程求解
    - 最小二乘法
-5. [特征值](chp05.md)
+5. [特征值](chapters/chp05.html)
    - 特征值计算
    - PCA实例
-6. [几何变换](chp06.md)
+6. [几何变换](chapters/chp06.html)
    - 变换矩阵
    - 旋转矩阵
-7. [高级特性](chp07.md)
+7. [高级特性](chapters/chp07.html)
    - 稀疏矩阵
    - 高级功能
 
@@ -113,7 +118,7 @@ source ~/.bashrc
 ## 项目结构
 
 ```
-eigen-tutorial/
+eigen3tutorial/
 ├── CMakeLists.txt
 ├── eigen3version.cpp
 ├── README.md

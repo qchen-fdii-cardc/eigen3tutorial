@@ -38,4 +38,49 @@ pre {
   line-height: 1.45;
   background-color: #f6f8fa;
   border-radius: 3px;
+}
+
+// Home page styles
+.home {
+  h1 {
+    margin-bottom: 1.5rem;
+  }
+
+  h2 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .chapter-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .chapter {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #dee2e6;
+
+    h3 {
+      margin-top: 0;
+      margin-bottom: 1rem;
+      
+      a {
+        color: #0366d6;
+        text-decoration: none;
+        
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 1.5rem;
+    }
+  }
 } 
