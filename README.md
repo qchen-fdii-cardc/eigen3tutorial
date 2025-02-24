@@ -4,33 +4,9 @@ title: Eigen 教程
 permalink: /
 ---
 
-# Eigen 教程
+# Eigen3 教程 （施工中）
 
 这是一个 Eigen C++ 线性代数库的教程项目，包含了从基础到高级的示例代码。
-
-## 教程目录
-1. [基础知识](chapters/chp01.html)
-   - 基本矩阵操作
-   - 矩阵运算
-   - 特殊矩阵
-2. [矩阵操作](chapters/chp02.html)
-   - 矩阵基本操作
-   - 矩阵分解
-3. [向量操作](chapters/chp03.html)
-   - 向量基本操作
-   - 向量高级特性
-4. [线性方程](chapters/chp04.html)
-   - 线性方程求解
-   - 最小二乘法
-5. [特征值](chapters/chp05.html)
-   - 特征值计算
-   - PCA实例
-6. [几何变换](chapters/chp06.html)
-   - 变换矩阵
-   - 旋转矩阵
-7. [高级特性](chapters/chp07.html)
-   - 稀疏矩阵
-   - 高级功能
 
 这个教程与[Eigen 官方文档](https://eigen.tuxfamily.org/dox/) 的区别是什么？
 
@@ -38,8 +14,6 @@ permalink: /
 - 官方文档是按照Eigen 的源码顺序组织的，这个教程是按照实际应用的顺序组织的。
 - 官方文档是面向Eigen 的开发者或者想要深入了解Eigen 的实现原理的读者，这个教程是面向需要使用Eigen 库解决实际问题的读者。
 - 应用中的实际问题和解决方案都采用实际的代码进行测试和说明，例如POD、Kalman滤波等实际代码都是有具体的背景和应用场景，本教程尽量做到与实际应用相结合。
-
-
 
 
 ## 环境要求
