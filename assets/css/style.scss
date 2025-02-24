@@ -1,17 +1,17 @@
 @import "{{ site.theme }}";
 
-// Override any theme defaults here
+// Override theme defaults
 .page-header {
   display: none;
 }
 
-// Add wrapper for layout
+// Layout
 .wrapper {
   display: flex;
   min-height: 100vh;
 }
 
-// Fix sidebar styles
+// Sidebar
 .sidebar {
   position: fixed;
   left: 0;
@@ -23,18 +23,57 @@
   overflow-y: auto;
   border-right: 1px solid #dee2e6;
   z-index: 100;
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    margin: 8px 0;
+  }
+
+  a {
+    color: #24292e;
+    text-decoration: none;
+
+    &:hover {
+      color: #0366d6;
+    }
+
+    &.active {
+      color: #0366d6;
+      font-weight: bold;
+    }
+  }
+
+  &-header {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #dee2e6;
+  }
+
+  &-section {
+    margin-bottom: 15px;
+
+    h3 {
+      margin-bottom: 10px;
+      font-size: 1.1em;
+      color: #24292e;
+    }
+  }
 }
 
-// Fix main content styles
+// Main content
 .main-content {
   flex: 1;
-  margin-left: 250px;  // Match sidebar width
+  margin-left: 250px;
   padding: 2rem 4rem;
-  max-width: calc(100% - 250px);  // Ensure content doesn't extend under sidebar
+  max-width: calc(100% - 250px);
   box-sizing: border-box;
   overflow-x: hidden;
-  
-  // Add more spacing between elements
+
   h1, h2, h3, h4, h5, h6 {
     margin-top: 2.5rem;
     margin-bottom: 1.5rem;
@@ -43,7 +82,7 @@
   }
 
   h1 {
-    margin-top: 1rem;  // Less space at the top of the page
+    margin-top: 1rem;
   }
 
   p {
@@ -63,6 +102,12 @@
 
   pre {
     margin: 2rem 0;
+    padding: 16px;
+    overflow: auto;
+    font-size: 85%;
+    line-height: 1.6;
+    background-color: #f6f8fa;
+    border-radius: 3px;
   }
 
   blockquote {
@@ -79,66 +124,47 @@
   }
 }
 
-// Responsive adjustments
-@media screen and (max-width: 768px) {
-  .sidebar {
-    display: none;
-  }
-
-  .main-content {
-    margin-left: 0;
-    max-width: 100%;
-    padding: 2rem;
-  }
-}
-
-@media screen and (max-width: 42em) {
-  .main-content {
-    padding: 1rem;
-  }
-}
-
-// Add custom styles for code blocks
+// Code blocks
 .highlight {
   background-color: #f6f8fa;
   border-radius: 3px;
-  margin: 2rem 0;  // Increased margin
+  margin: 2rem 0;
   
   pre {
-    margin: 0;  // Reset margin for pre inside highlight
+    margin: 0;
   }
 }
 
-pre {
-  padding: 16px;
-  overflow: auto;
-  font-size: 85%;
-  line-height: 1.6;  // Increased line height
-  background-color: #f6f8fa;
-  border-radius: 3px;
+// Mermaid diagrams
+.mermaid {
+  margin: 2rem 0;
+  text-align: center;
+  background: #fff;
+  padding: 1rem;
+  border-radius: 8px;
 }
 
-// Home page styles
+// Home page
 .home {
   h1 {
-    margin-bottom: 2rem;  // Increased margin
+    margin-bottom: 2rem;
   }
 
   h2 {
-    margin-top: 3rem;  // Increased margin
+    margin-top: 3rem;
     margin-bottom: 1.5rem;
   }
 
   .chapter-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2.5rem;  // Increased gap
-    margin: 2.5rem 0;  // Increased margin
+    gap: 2.5rem;
+    margin: 2.5rem 0;
   }
 
   .chapter {
     background: #f8f9fa;
-    padding: 2rem;  // Increased padding
+    padding: 2rem;
     border-radius: 8px;
     border: 1px solid #dee2e6;
     transition: transform 0.2s ease-in-out;
@@ -171,5 +197,24 @@ pre {
         margin-bottom: 0.75rem;
       }
     }
+  }
+}
+
+// Responsive adjustments
+@media screen and (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+
+  .main-content {
+    margin-left: 0;
+    max-width: 100%;
+    padding: 2rem;
+  }
+}
+
+@media screen and (max-width: 42em) {
+  .main-content {
+    padding: 1rem;
   }
 } 

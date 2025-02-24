@@ -10,89 +10,18 @@
   <link rel="stylesheet" href="{{ 'assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
   {% include head-custom.html %}
 
-
   <script type="module">
     import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs';
     mermaid.initialize({ startOnLoad: true });
+
+    // Add mermaid class while keeping language-mermaid class
+    document.addEventListener('DOMContentLoaded', function () {
+      const elements = document.getElementsByClassName('language-mermaid');
+      for (let i = 0; i < elements.length; i++) {
+        elements[i].classList.add('mermaid');
+      }
+    });
   </script>
-  <style>
-    .sidebar {
-      position: fixed;
-      left: 0;
-      top: 0;
-      bottom: 0;
-      width: 250px;
-      background: #f8f9fa;
-      padding: 20px;
-      overflow-y: auto;
-      border-right: 1px solid #dee2e6;
-    }
-
-    .main-content {
-      margin-left: 250px;
-      padding: 20px;
-    }
-
-    .sidebar ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .sidebar li {
-      margin: 8px 0;
-    }
-
-    .sidebar a {
-      color: #24292e;
-      text-decoration: none;
-    }
-
-    .sidebar a:hover {
-      color: #0366d6;
-    }
-
-    .sidebar .active {
-      color: #0366d6;
-      font-weight: bold;
-    }
-
-    @media (max-width: 768px) {
-      .sidebar {
-        display: none;
-      }
-
-      .main-content {
-        margin-left: 0;
-      }
-    }
-
-    .sidebar-header {
-      margin-bottom: 20px;
-      padding-bottom: 10px;
-      border-bottom: 1px solid #dee2e6;
-    }
-
-    .sidebar-section {
-      margin-bottom: 15px;
-    }
-
-    .sidebar-section h3 {
-      margin-bottom: 10px;
-      font-size: 1.1em;
-      color: #24292e;
-    }
-
-    /* Add Mermaid specific styles */
-    .mermaid {
-      margin: 2rem 0;
-      text-align: center;
-      background: #fff;
-      padding: 1rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    }
-  </style>
 </head>
 
 <body>
