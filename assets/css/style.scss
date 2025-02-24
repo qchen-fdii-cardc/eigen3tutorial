@@ -7,20 +7,22 @@
 
 // Layout
 .wrapper {
-  display: flex;
+  display: flex !important;  // Force flex display
   width: 100%;
   height: 100vh;  // Full viewport height
   overflow: hidden;  // Prevent body scroll
+  flex-direction: row !important;  // Force row direction
 }
 
 // Sidebar container
 .sidebar-container {
-  width: 250px;
+  width: 250px !important;  // Force width
   flex-shrink: 0;  // Prevent shrinking
   background: #f8f9fa;
   border-right: 1px solid #dee2e6;
   overflow-y: auto;  // Enable container scroll
-  height: 100vh;
+  height: 100vh !important;  // Force height
+  display: block !important;  // Force display
 }
 
 // Sidebar
@@ -75,7 +77,7 @@
   padding: 2rem 4rem;
   padding-top: 0;
   overflow-y: auto;  // Enable content scroll
-  height: 100vh;
+  height: 100vh !important;  // Force height
   box-sizing: border-box;
   overscroll-behavior: contain;
 
@@ -210,6 +212,14 @@
 @media screen and (max-width: 768px) {
   .wrapper {
     flex-direction: column;
+    height: auto;
+    overflow: visible;
+  }
+
+  .sidebar-container {
+    width: 100%;
+    height: auto;
+    overflow: visible;
   }
 
   .sidebar {
@@ -220,10 +230,11 @@
   }
 
   .main-content {
-    margin-left: 0;
     width: 100%;
+    height: auto;
+    overflow: visible;
     padding: 2rem;
-    padding-top: 1rem;  // Restore some top padding on mobile
+    padding-top: 1rem;
   }
 }
 
