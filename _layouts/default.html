@@ -77,9 +77,9 @@
     <main class="main-content">
       <div class="chapter-navigation">
         <p>Site Pages Count: {{site.pages.size}}</p>
-        {$ for page_i in site.pages %}
+        {% for page_i in site.pages %}
         <p>{{page_i.path}}</p>
-        {$ endfor $}
+        {% endfor %}
       </div>
       {{ content }}
     </main>
