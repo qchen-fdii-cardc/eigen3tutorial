@@ -26,7 +26,7 @@
     document.addEventListener('DOMContentLoaded', function () {
       const toc = document.getElementById('toc');
       const content = document.querySelector('.main-content');
-      const headings = content.querySelectorAll('h1, h2, h3, h4, h5, h6');
+      const headings = content.querySelectorAll('h2, h3');
       headings.forEach(heading => {
         const link = document.createElement('a');
         link.href = `#${heading.id}`;
@@ -66,7 +66,7 @@
           <ul>
             <li><a href="{{ site.baseurl }}/">首页</a></li>
             <li><a href="https://github.com/qchen-fdii-cardc/eigen3tutorial">GitHub</a></li>
-            <li><a href="https://www.windtunnel.cn">大福是小强</a></li>
+            <li><a href="https://www.windtunnel.cn">技术写作练习</a></li>
           </ul>
         </div>
       </nav>
