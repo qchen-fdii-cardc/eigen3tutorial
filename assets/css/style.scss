@@ -80,7 +80,7 @@
   overflow-y: auto;
   height: 100vh;
   box-sizing: border-box;
-  max-width: none;
+  width: 100%;
 }
 
 /* TOC container */
@@ -138,6 +138,5 @@
     margin-left: 0;
     margin-right: 0;
     width: 100%;
-    max-width: none;
   }
 }
