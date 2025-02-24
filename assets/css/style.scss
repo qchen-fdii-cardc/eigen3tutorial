@@ -9,6 +9,8 @@
 .wrapper {
   display: flex;
   min-height: 100vh;
+  width: 100%;
+  position: relative;
 }
 
 // Sidebar
@@ -23,6 +25,8 @@
   overflow-y: auto;
   border-right: 1px solid #dee2e6;
   z-index: 100;
+  height: 100vh;
+  box-sizing: border-box;
 
   ul {
     list-style: none;
@@ -70,9 +74,11 @@
   flex: 1;
   margin-left: 250px;
   padding: 2rem 4rem;
-  max-width: calc(100% - 250px);
+  width: calc(100% - 250px);
   box-sizing: border-box;
+  min-height: 100vh;
   overflow-x: hidden;
+  position: relative;
 
   h1, h2, h3, h4, h5, h6 {
     margin-top: 2.5rem;
@@ -202,13 +208,20 @@
 
 // Responsive adjustments
 @media screen and (max-width: 768px) {
+  .wrapper {
+    flex-direction: column;
+  }
+
   .sidebar {
+    position: static;
+    width: 100%;
+    height: auto;
     display: none;
   }
 
   .main-content {
     margin-left: 0;
-    max-width: 100%;
+    width: 100%;
     padding: 2rem;
   }
 }
