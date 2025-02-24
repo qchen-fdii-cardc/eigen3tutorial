@@ -77,7 +77,11 @@
     <main class="main-content">
       <div class="chapter-navigation">
         {% assign sorted_pages = site.pages | sort: 'path' %}
-        {% assign chapter_pages = sorted_pages | where: "path", "chapters/chp" %}
+        {% for page_iter in sorted_pages %}
+          {% if page_iter.path contains 'chapters/chp' %}
+            {% assign chapter_pages = chapter_pages | push: page_iter %}
+          {% endif %}
+        {% endfor %}
         {% assign current_index = chapter_pages | index_of: page %}
         {% assign previous_index = current_index | minus: 1 %}
         {% assign next_index = current_index | plus: 1 %}
