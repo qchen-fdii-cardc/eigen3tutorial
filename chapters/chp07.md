@@ -203,7 +203,7 @@ Array3d a, b;
 Array3d c = a * b;  // 元素级乘法
 Array3d d = a.max(b);  // 元素级最大值
 }
-
+```
 ## 7.5 性能优化
 
 ### 7.5.1 内存对齐
@@ -212,7 +212,7 @@ class MyClass {
     Matrix4d matrix;
     EIGEN_MAKE_ALIGNED_OPERATOR_NEW
 }
-
+```
 ### 7.5.2 编译优化
 ```cpp
 // 启用向量化
