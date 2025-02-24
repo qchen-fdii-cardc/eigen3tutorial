@@ -53,11 +53,11 @@
           <h3>教程目录</h3>
           <ul>
             {% assign sorted_pages = site.pages | sort: 'path' %}
-            {% for page in sorted_pages %}
-            {% if page.path contains 'chapters/chp' %}
+            {% for page_iter in sorted_pages %}
+            {% if page_iter.path contains 'chapters/chp' %}
             <li>
-              <a href="{{ page.url | relative_url }}" {% if page.url==page.url %}class="active" {% endif %}>
-                {{ page.title | default: page.path | split: '/' | last | split: '.' | first }}
+              <a href="{{ page_iter.url | relative_url }}" {% if page_iter.url==page.url %}class="active" {% endif %}>
+                {{ page_iter.title | default: page_iter.path | split: '/' | last | split: '.' | first }}
               </a>
             </li>
             {% endif %}
@@ -76,14 +76,10 @@
     </div>
     <main class="main-content">
       <div class="chapter-navigation">
-        {% assign sorted_pages = site.pages | sort: 'path' %}
+        {{/*  {% assign sorted_pages = site.pages | sort: 'path' %}  */}}
         {% assign current_index = sorted_pages | index_of: page %}
         {% assign previous_page = sorted_pages | at: current_index | minus: 1 %}
         {% assign next_page = sorted_pages | at: current_index | plus: 1 %}
-        <p>
-        {{ current_index }} /  {{ sorted_pages.size }}          
-        </p>
-
 
         {% if current_index > 0 %}
         <a href="{{ previous_page.url | relative_url }}" class="previous-chapter">上一章: {{ previous_page.title | default:
