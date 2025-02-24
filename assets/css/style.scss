@@ -11,6 +11,7 @@
   min-height: 100vh;
   width: 100%;
   position: relative;
+  overflow: hidden;
 }
 
 // Sidebar
@@ -27,6 +28,7 @@
   z-index: 100;
   height: 100vh;
   box-sizing: border-box;
+  flex-shrink: 0;
 
   ul {
     list-style: none;
@@ -76,8 +78,8 @@
   padding: 2rem 4rem;
   width: calc(100% - 250px);
   box-sizing: border-box;
-  min-height: 100vh;
-  overflow-x: hidden;
+  overflow-y: auto;
+  height: 100vh;
   position: relative;
 
   h1, h2, h3, h4, h5, h6 {
@@ -210,6 +212,7 @@
 @media screen and (max-width: 768px) {
   .wrapper {
     flex-direction: column;
+    overflow: auto;
   }
 
   .sidebar {
@@ -222,6 +225,8 @@
   .main-content {
     margin-left: 0;
     width: 100%;
+    height: auto;
+    overflow: visible;
     padding: 2rem;
   }
 }
