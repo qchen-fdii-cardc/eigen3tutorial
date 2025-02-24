@@ -101,8 +101,7 @@ cl eigen3version.cpp /I "D:\Eigen3\include\eigen3"
 因为我们采用`cmake`编译，所以需要修改`CMakeLists.txt`文件，所以在Windows下面基本上也都是一样一样的。
 
 
-## 例子程序和代码结构
-
+## 项目总体结构
 
 
 ```
@@ -135,7 +134,6 @@ eigen3tutorial/
     └── advanced_features.cpp
 ```
 
-## 项目总体结构
 
 本项目的结构设计旨在帮助用户快速找到所需的示例代码和文档。项目的根目录包含以下主要部分：
 
@@ -177,15 +175,6 @@ cmake --build .
 # ... 其他示例
 ```
 
-## 文档结构
-
-- `chp01.md`: 基础知识，包括数据类型和基本操作
-- `chp02.md`: 矩阵操作和分解
-- `chp03.md`: 向量操作和高级特性
-- `chp04.md`: 线性方程和最小二乘
-- `chp05.md`: 特征值和主成分分析
-- `chp06.md`: 几何变换和旋转
-- `chp07.md`: 高级特性和稀疏矩阵
 
 ## 其他注意事项
 
@@ -220,5 +209,3 @@ cmake --build .
 ## 参考资料
 
 - [Eigen 官方文档](https://eigen.tuxfamily.org/dox/)
-- [Eigen 用户手册](https://eigen.tuxfamily.org/dox/UserManual_Index.html)
-- [Eigen 快速参考](https://eigen.tuxfamily.org/dox/QuickReference_Index.html)
