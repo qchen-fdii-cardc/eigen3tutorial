@@ -31,8 +31,11 @@
         const link = document.createElement('a');
         link.href = `#${heading.id}`;
         link.textContent = heading.textContent;
-        if (heading.tagName.toLowerCase() === 'h2') {
+        if (heading.tagName.toLowerCase() === "h2") {
+          link.style.marginLeft = '0px';
           link.style.fontWeight = 'bold';
+        } else {
+          link.style.marginLeft = '2em';
         }
         const listItem = document.createElement('li');
         listItem.appendChild(link);
