@@ -23,6 +23,7 @@
   overflow-y: auto;  // Enable container scroll
   height: 100vh !important;  // Force height
   display: block !important;  // Force display
+  position: sticky;
 }
 
 // Sidebar
