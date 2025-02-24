@@ -128,12 +128,8 @@
     overflow: visible;
   }
 
-  .sidebar-container {
-    width: 100%;
-    height: auto;
-  }
-
-  .sidebar {
+  .sidebar-container,
+  .toc-container {
     display: none;
   }
 
@@ -141,12 +137,5 @@
     margin-left: 0;
     margin-right: 0;
     width: 100%;
-  }
-
-  .toc-container {
-    width: 100%;
-    height: auto;
-    position: static;
-    border-left: none;
   }
 }
