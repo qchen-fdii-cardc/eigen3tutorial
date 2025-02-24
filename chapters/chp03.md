@@ -41,7 +41,7 @@ classDiagram
     VectorBase <|-- Vector
     VectorBase <|-- ArrayVector
     VectorBase <|-- Quaternion
-}
+```
 
 ### 类说明
 1. VectorBase：向量基类

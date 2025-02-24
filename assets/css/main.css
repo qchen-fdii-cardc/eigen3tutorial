@@ -1,0 +1,115 @@
+
+
+/* Override theme defaults */
+.page-header {
+  display: none;
+}
+
+/* Layout */
+.wrapper {
+  display: flex !important;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: fixed;
+}
+
+/* Sidebar container */
+.sidebar-container {
+  width: 250px;
+  flex-shrink: 0;
+  background: #f8f9fa;
+  border-right: 1px solid #dee2e6;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+/* Sidebar */
+.sidebar {
+  padding: 20px;
+  box-sizing: border-box;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li {
+  margin: 8px 0;
+}
+
+.sidebar a {
+  color: #24292e;
+  text-decoration: none;
+}
+
+.sidebar a:hover {
+  color: #0366d6;
+}
+
+.sidebar a.active {
+  color: #0366d6;
+  font-weight: bold;
+}
+
+.sidebar-header {
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.sidebar-section {
+  margin-bottom: 15px;
+}
+
+/* Main content */
+.main-content {
+  flex: 1;
+  margin-left: 250px;
+  padding: 2rem 4rem;
+  padding-top: 0;
+  overflow-y: auto;
+  height: 100vh;
+  box-sizing: border-box;
+  width: calc(100% - 250px);
+}
+
+.main-content h1,
+.main-content h2,
+.main-content h3,
+.main-content h4,
+.main-content h5,
+.main-content h6 {
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #eaecef;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .wrapper {
+    flex-direction: column;
+    height: auto;
+    overflow: visible;
+  }
+
+  .sidebar-container {
+    width: 100%;
+    height: auto;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  .main-content {
+    padding: 1rem;
+  }
+}

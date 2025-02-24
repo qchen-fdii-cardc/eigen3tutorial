@@ -34,10 +34,6 @@ readme_index:
 mermaid:
   version: "latest"
 
-# # Additional scripts
-# head_scripts:
-#   - https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js
-
 # Exclude files from processing
 exclude:
   - Gemfile
