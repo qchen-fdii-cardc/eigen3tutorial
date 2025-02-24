@@ -76,13 +76,6 @@
     </div>
     <main class="main-content">
       <div class="chapter-navigation">
-        <p>Site Pages Count: {{site.pages.size}}</p>
-        {% for page_i in site.pages %}
-          {% if page_i.path | contains: 'chapters/chp' %}
-            {% asiign pi == page.path | split: '/' | last | split: '.' | first | remove_first: 'chp'  | to_i %}
-            <P>{{pi}}: {{page_i.path}}</P>
-          {% endif %}
-        {% endfor %}
         {{ if page.path | contains: 'chapters/chp' }}
           {% assign pi = page.path | split: '/' | last | split: '.' | first | remove_first: 'chp'  | to_i %}
           {% if pi > 1 %}
