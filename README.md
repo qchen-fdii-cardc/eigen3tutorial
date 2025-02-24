@@ -53,9 +53,9 @@ vcpkg install eigen3:x64-windows
 ```
 
 2. 或者手动下载:
-- 访问 [Eigen 官网](https://eigen.tuxfamily.org/)
-- 下载最新版本
-- 解压到合适的位置
+- 访问 [Eigen 官网下载页面](https://eigen.tuxfamily.org/index.php?title=Main_Page#Download)
+- 下载[最新版本](https://gitlab.com/libeigen/eigen/-/archive/3.4.0/eigen-3.4.0.zip)
+- 解压到合适的位置，例如`D:\Eigen3`
 
 ### 配置环境变量
 
@@ -95,7 +95,7 @@ source ~/.bashrc
 
 ```powershell
 vcvarsall.bat
-cl eigen3version.cpp /I "D:\Eigen3\include\eigen3"
+cl eigen3version.cpp /I "D:\Eigen3\eigen-3.4.0"
 ```
 
 因为我们采用`cmake`编译，所以需要修改`CMakeLists.txt`文件，所以在Windows下面基本上也都是一样一样的。
