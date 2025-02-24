@@ -57,13 +57,13 @@
           <ul>
             {% assign sorted_pages = site.pages | sort: 'path' %}
             {% for page in sorted_pages %}
-              {% if page.path contains 'chapters/chp' %}
-                <li>
-                  <a href="{{ page.url | relative_url }}" {% if page.url == page.url %}class="active"{% endif %}>
-                    {{ page.title | default: page.path | split: '/' | last | split: '.' | first }}
-                  </a>
-                </li>
-              {% endif %}
+            {% if page.path contains 'chapters/chp' %}
+            <li>
+              <a href="{{ page.url | relative_url }}" {% if page.url==page.url %}class="active" {% endif %}>
+                {{ page.title | default: page.path | split: '/' | last | split: '.' | first }}
+              </a>
+            </li>
+            {% endif %}
             {% endfor %}
           </ul>
         </div>
@@ -77,7 +77,22 @@
         </div>
       </nav>
     </div>
-    <main class="main-content">      
+    <main class="main-content">
+      <div class="chapter-navigation">
+        {% assign sorted_pages = site.pages | sort: 'path' %}
+        {% assign current_index = sorted_pages | index_of: page %}
+        {% assign previous_page = sorted_pages | slice: current_index | first %}
+        {% assign next_page = sorted_pages | slice: current_index | last %}
+
+        {% if current_index > 0 %}
+        <a href="{{ previous_page.url | relative_url }}" class="previous-chapter">上一章: {{ previous_page.title | default:
+          previous_page.path | split: '/' | last | split: '.' | first }}</a>
+        {% endif %}
+
+        {% if current_index < sorted_pages.size %} <a href="{{ next_page.url | relative_url }}" class="next-chapter">
+          下一章: {{ next_page.title | default: next_page.path | split: '/' | last | split: '.' | first }}</a>
+          {% endif %}
+      </div>
       {{ content }}
       <div class="chapter-navigation">
         {% assign sorted_pages = site.pages | sort: 'path' %}
@@ -86,13 +101,14 @@
         {% assign next_page = sorted_pages | slice: current_index | last %}
         
         {% if current_index > 0 %}
-          <a href="{{ previous_page.url | relative_url }}" class="previous-chapter">上一章: {{ previous_page.title | default: previous_page.path | split: '/' | last | split: '.' | first }}</a>
+        <a href="{{ previous_page.url | relative_url }}" class="previous-chapter">上一章: {{ previous_page.title | default:
+          previous_page.path | split: '/' | last | split: '.' | first }}</a>
         {% endif %}
-        
-        {% if current_index < sorted_pages.size %}
-          <a href="{{ next_page.url | relative_url }}" class="next-chapter">下一章: {{ next_page.title | default: next_page.path | split: '/' | last | split: '.' | first }}</a>
-        {% endif %}
-      </div>      
+
+        {% if current_index < sorted_pages.size %} <a href="{{ next_page.url | relative_url }}" class="next-chapter">
+          下一章: {{ next_page.title | default: next_page.path | split: '/' | last | split: '.' | first }}</a>
+          {% endif %}
+      </div>
     </main>
     <aside class="toc-container">
       <h3>本章内容</h3>
