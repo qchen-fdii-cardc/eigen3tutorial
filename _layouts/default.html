@@ -76,7 +76,12 @@
     </div>
     <main class="main-content">
       <div class="chapter-navigation">
+        {{ sorted_pages | size }}
         {% assign current_index = sorted_pages | index_of: page %}
+
+        {{ page.title | default: page.path | split: '/' | last | split: '.' | first }}
+
+        {{current_index}}
 
         {% if current_index > 0 %}
         {% assign previous_page = sorted_pages[current_index | minus: 1] %}
