@@ -75,17 +75,6 @@
       </nav>
     </div>
     <main class="main-content">
-      <div class="chapter-navigation">
-        {{ if page.path | contains: 'chapters/chp' }}
-          {% assign pi = page.path | split: '/' | last | split: '.' | first | remove_first: 'chp'  | to_i %}
-          {% if pi > 1 %}
-            <a href="{{ site.baseurl }}/chapters/chp{{ pi | minus: 1 }}.html">上一章</a>
-          {% endif %}
-          {% if pi < site.pages.size %}
-            <a href="{{ site.baseurl }}/chapters/chp{{ pi | plus: 1 }}.html">下一章</a>
-          {% endif %}
-        {% endif %}
-      </div>
       {{ content }}
     </main>
     <aside class="toc-container">
