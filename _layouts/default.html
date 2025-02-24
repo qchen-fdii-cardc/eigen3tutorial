@@ -76,7 +76,6 @@
     </div>
     <main class="main-content">
       <div class="chapter-navigation">
-        {{/* {% assign sorted_pages = site.pages | sort: 'path' %} */}}
         {% assign current_index = sorted_pages | index_of: page %}
 
         {% if current_index > 0 %}
