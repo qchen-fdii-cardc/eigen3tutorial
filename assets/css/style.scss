@@ -82,7 +82,22 @@
   box-sizing: border-box;
   width: 100%;
 }
+.chapter-navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
 
+.previous-chapter,
+.next-chapter {
+  color: #0366d6;
+  text-decoration: none;
+}
+
+.previous-chapter:hover,
+.next-chapter:hover {
+  text-decoration: underline;
+}
 /* TOC container */
 .toc-container {
   width: 250px;
