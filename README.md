@@ -89,10 +89,25 @@ source ~/.bashrc
 
 这样我们就可以在编译时直接使用`-I/usr/include/eigen3`指定头文件位置，而不需要每次都指定。当然，Eigen最好的地方（个人观点）也就是，它只有头文件，没有库文件，所以不需要链接和设置链接选项。
 
-## 项目结构
+### Windows 下微软编译器
+
+采用微软编译器编译Eigen 时，同样需要指定头文件位置，运行`vcvarsall.bat`脚本设置环境变量，然后调用`cl`命令编译。
+
+```powershell
+vcvarsall.bat
+cl eigen3version.cpp /I "D:\Eigen3\include\eigen3"
+```
+
+因为我们采用`cmake`编译，所以需要修改`CMakeLists.txt`文件，所以在Windows下面基本上也都是一样一样的。
+
+
+## 例子程序和代码结构
+
+
 
 ```
 eigen3tutorial/
+├── chapters/
 ├── CMakeLists.txt
 ├── eigen3version.cpp
 ├── README.md
@@ -119,6 +134,18 @@ eigen3tutorial/
     ├── sparse_matrix.cpp
     └── advanced_features.cpp
 ```
+
+## 项目总体结构
+
+本项目的结构设计旨在帮助用户快速找到所需的示例代码和文档。项目的根目录包含以下主要部分：
+
+- `chapters/`: 包含每个章节的详细内容和示例代码。
+- `CMakeLists.txt`: 项目的 CMake 配置文件，用于构建和编译示例代码。
+- `eigen3version.cpp`: 一个简单的程序，用于检查 Eigen 库的版本。
+- `README.md`: 项目的主要文档，提供了安装、配置和使用的指南。
+- `chp01/` 至 `chp07/`: 每个子目录对应一个特定的主题或功能模块，包含相关的示例代码文件。
+
+每个章节目录（如 `chp01/`）中包含多个 C++ 源文件，这些文件展示了如何使用 Eigen 库解决特定的线性代数问题。通过这种结构，用户可以轻松地导航到感兴趣的主题并查看相关的代码示例。
 
 ## 编译和运行
 
