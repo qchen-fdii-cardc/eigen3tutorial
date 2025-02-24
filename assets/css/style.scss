@@ -5,11 +5,34 @@
   display: none;
 }
 
+// Add wrapper for layout
+.wrapper {
+  display: flex;
+  min-height: 100vh;
+}
+
+// Fix sidebar styles
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 250px;
+  background: #f8f9fa;
+  padding: 20px;
+  overflow-y: auto;
+  border-right: 1px solid #dee2e6;
+  z-index: 100;
+}
+
+// Fix main content styles
 .main-content {
-  max-width: 64rem;
-  padding: 2rem 6rem;
-  margin: auto auto;
-  font-size: 1.1rem;
+  flex: 1;
+  margin-left: 250px;  // Match sidebar width
+  padding: 2rem 4rem;
+  max-width: calc(100% - 250px);  // Ensure content doesn't extend under sidebar
+  box-sizing: border-box;
+  overflow-x: hidden;
   
   // Add more spacing between elements
   h1, h2, h3, h4, h5, h6 {
@@ -56,15 +79,22 @@
   }
 }
 
-@media screen and (max-width: 64em) {
+// Responsive adjustments
+@media screen and (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+
   .main-content {
-    padding: 2rem 4rem;
+    margin-left: 0;
+    max-width: 100%;
+    padding: 2rem;
   }
 }
 
 @media screen and (max-width: 42em) {
   .main-content {
-    padding: 2rem 1rem;
+    padding: 1rem;
   }
 }
 
