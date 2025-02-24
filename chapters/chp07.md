@@ -38,7 +38,7 @@ classDiagram
     
     SparseMatrixBase <|-- SparseMatrix
     SparseMatrixBase <|-- SparseVector
-}
+```
 
 ### 类说明
 1. SparseMatrixBase：稀疏矩阵基类
@@ -115,7 +115,8 @@ classDiagram
     SparseSolverBase <|-- SparseLU
     SparseSolverBase <|-- SparseQR
     SparseSolverBase <|-- BiCGSTAB
-}
+
+```
 
 ### 类说明
 1. SparseSolverBase：所有稀疏求解器的基类
@@ -157,7 +158,8 @@ classDiagram
     
     Parallel <|-- ThreadPool
     Parallel <|-- ParallelFor
-}
+```
+
 
 ### 类说明
 1. 并行计算基础设施：
@@ -219,7 +221,7 @@ class MyClass {
 // 固定大小矩阵优化
 Matrix<double,4,4,ColMajor|AutoAlign>
 }
-
+```
 ### 7.5.3 并行计算
 ```cpp
 // 设置线程数
@@ -228,7 +230,7 @@ Eigen::setNbThreads(4);
 // 获取当前线程数
 int threads = Eigen::nbThreads();
 }
-
+```
 ## 7.6 代码示例说明
 
 ### sparse_matrix.cpp
@@ -276,6 +278,7 @@ SimplicialLDLT<SparseMatrix<double>> solver;
 solver.compute(sparse);
 VectorXd x = solver.solve(b);
 }
+```
 
 让我们分析这些操作：
 1. 矩阵-向量乘法：
@@ -308,8 +311,7 @@ int threads = Eigen::nbThreads();
 for(int i = 0; i < rows; ++i) {
     result.row(i) = matrix.row(i) * vector;
 }
-}
-
+```
 ### 7.4.2 线程池使用
 ```cpp
 // 创建线程池
@@ -323,7 +325,7 @@ auto future = pool.enqueue([](int i) {
 // 获取结果
 int result = future.get();
 }
-
+```
 ## 7.5 高级优化技术
 
 ### 7.5.1 内存对齐
@@ -332,7 +334,7 @@ class MyClass {
     Matrix4d matrix;  // 固定大小的Eigen对象
     EIGEN_MAKE_ALIGNED_OPERATOR_NEW  // 确保16字节对齐
 }
-
+```
 ### 7.5.2 表达式模板
 ```cpp
 // 避免创建临时对象
@@ -341,7 +343,7 @@ MatrixXd result = (matrix1 * vector).cwiseAbs() + vector2;
 // 显式求值
 MatrixXd result = (matrix1 * vector).eval();
 }
-
+```
 ### 7.5.3 SIMD优化
 ```cpp
 // 启用向量化
@@ -350,7 +352,7 @@ MatrixXd result = (matrix1 * vector).eval();
 // 使用对齐的数据类型
 Matrix<double,4,4,ColMajor|AutoAlign> matrix;
 }
-
+```
 ## 7.6 代码示例详解
 
 ### 7.6.1 sparse_matrix.cpp
@@ -379,7 +381,7 @@ int main() {
     
     return 0;
 }
-}
+```
 
 分析：
 1. 矩阵创建：
@@ -417,7 +419,7 @@ int main() {
     
     return 0;
 }
-}
+```
 
 分析：
 1. 并行设置：
