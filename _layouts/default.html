@@ -31,6 +31,12 @@
         const link = document.createElement('a');
         link.href = `#${heading.id}`;
         link.textContent = heading.textContent;
+        if (heading.tagName === "h2") {
+          link.style.marginLeft = '0px';
+          link.style.fontWeight = 'bold';
+        } else {
+          link.style.marginLeft = '2em';
+        }
         const listItem = document.createElement('li');
         listItem.appendChild(link);
         toc.appendChild(listItem);
@@ -75,7 +81,7 @@
       {{ content }}
     </main>
     <aside class="toc-container">
-      <h3>Table of Contents</h3>
+      <h3>本章内容</h3>
       <ul id="toc"></ul>
     </aside>
   </div>
