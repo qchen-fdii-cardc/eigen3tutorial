@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: " en-US" }}">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  {% seo %}
+  <link rel="stylesheet" href="{{ " /assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
+  {% include head-custom.html %}
+
+  <!-- Mermaid -->
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@{{ site.mermaid.version }}/dist/mermaid.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      mermaid.initialize({
+        startOnLoad: true,
+        theme: JSON.parse('{{ site.mermaid.theme | jsonify }}').theme,
+        themeVariables: JSON.parse('{{ site.mermaid.theme | jsonify }}').themeVariables
+      });
+    });
+  </script>
+
+  <style>
+    .sidebar {
+      position: fixed;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 250px;
+      background: #f8f9fa;
+      padding: 20px;
+      overflow-y: auto;
+      border-right: 1px solid #dee2e6;
+    }
+
+    .main-content {
+      margin-left: 250px;
+      padding: 20px;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .sidebar li {
+      margin: 8px 0;
+    }
+
+    .sidebar a {
+      color: #24292e;
+      text-decoration: none;
+    }
+
+    .sidebar a:hover {
+      color: #0366d6;
+    }
+
+    .sidebar .active {
+      color: #0366d6;
+      font-weight: bold;
+    }
+
+    @media (max-width: 768px) {
+      .sidebar {
+        display: none;
+      }
+
+      .main-content {
+        margin-left: 0;
+      }
+    }
+
+    .sidebar-header {
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #dee2e6;
+    }
+
+    .sidebar-section {
+      margin-bottom: 15px;
+    }
+
+    .sidebar-section h3 {
+      margin-bottom: 10px;
+      font-size: 1.1em;
+      color: #24292e;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="sidebar">
+    <div class="sidebar-header">
+      <h2>{{ site.title }}</h2>
+    </div>
+    <div class="sidebar-section">
+      <h3>教程目录</h3>
+      <ul>
+        <li><a href="{{ site.baseurl }}/chp01" {% if page.url contains 'chp01' %}class="active" {% endif %}>1. 基础知识</a>
+        </li>
+        <li><a href="{{ site.baseurl }}/chp02" {% if page.url contains 'chp02' %}class="active" {% endif %}>2. 矩阵操作</a>
+        </li>
+        <li><a href="{{ site.baseurl }}/chp03" {% if page.url contains 'chp03' %}class="active" {% endif %}>3. 向量操作</a>
+        </li>
+        <li><a href="{{ site.baseurl }}/chp04" {% if page.url contains 'chp04' %}class="active" {% endif %}>4. 线性方程</a>
+        </li>
+        <li><a href="{{ site.baseurl }}/chp05" {% if page.url contains 'chp05' %}class="active" {% endif %}>5. 特征值</a>
+        </li>
+        <li><a href="{{ site.baseurl }}/chp06" {% if page.url contains 'chp06' %}class="active" {% endif %}>6. 几何变换</a>
+        </li>
+        <li><a href="{{ site.baseurl }}/chp07" {% if page.url contains 'chp07' %}class="active" {% endif %}>7. 高级特性</a>
+        </li>
+      </ul>
+    </div>
+    <div class="sidebar-section">
+      <h3>快速链接</h3>
+      <ul>
+        <li><a href="{{ site.baseurl }}/">首页</a></li>
+        <li><a href="{{ site.github.repository_url }}">GitHub</a></li>
+        <li><a href="{{ site.baseurl }}/about">关于</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="main-content">
+    {{ content }}
+  </div>
+</body>
+
+</html>

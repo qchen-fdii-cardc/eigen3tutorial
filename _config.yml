@@ -1,0 +1,83 @@
+# Site settings
+title: Eigen 教程
+description: 一个实用的 Eigen C++ 线性代数库中文教程
+baseurl: "/eigen-tutorial" # 仓库名称
+url: "" # 如果有自定义域名可以在这里设置
+
+# Build settings
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  math_engine: mathjax
+  parse_block_html: true    # Enable parsing HTML blocks
+
+# Theme settings
+theme: jekyll-theme-cayman
+remote_theme: pages-themes/cayman@v0.2.0
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-remote-theme
+
+# Mermaid settings
+mermaid:
+  version: "10.6.1"  # Mermaid version
+  theme: |
+    {
+      "theme": "dark",
+      "themeVariables": {
+        "primaryColor": "#BB2528",
+        "primaryTextColor": "#fff",
+        "primaryBorderColor": "#7C0000",
+        "lineColor": "#F8B229",
+        "secondaryColor": "#006100",
+        "tertiaryColor": "#fff"
+      }
+    }
+
+# Additional scripts
+head_scripts:
+  - https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js
+
+# Exclude files from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .git
+  - .github
+  - LICENSE
+  - README.md
+  - build/
+  - "*.cpp"
+  - CMakeLists.txt
+
+# Collections
+collections:
+  docs:
+    output: true
+    permalink: /:collection/:path/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "docs"
+    values:
+      layout: "default"
+      mermaid: true  # Enable Mermaid for all docs
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+      mermaid: true  # Enable Mermaid globally
+
+# Custom variables
+github:
+  is_project_page: true
+  repository_url: "https://www.windtunnel.cn/eigen-tutorial" 

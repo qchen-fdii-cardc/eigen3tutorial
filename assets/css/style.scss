@@ -1,0 +1,41 @@
+@import "{{ site.theme }}";
+
+// Override any theme defaults here
+.page-header {
+  display: none;
+}
+
+.main-content {
+  max-width: 64rem;
+  padding: 2rem 6rem;
+  margin: 0 auto;
+  font-size: 1.1rem;
+}
+
+@media screen and (max-width: 64em) {
+  .main-content {
+    padding: 2rem 4rem;
+  }
+}
+
+@media screen and (max-width: 42em) {
+  .main-content {
+    padding: 2rem 1rem;
+  }
+}
+
+// Add custom styles for code blocks
+.highlight {
+  background-color: #f6f8fa;
+  border-radius: 3px;
+  margin-bottom: 1rem;
+}
+
+pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #f6f8fa;
+  border-radius: 3px;
+} 
