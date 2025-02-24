@@ -82,7 +82,7 @@
   position: fixed;
   left: 0;
   right: 0;
-  max-width: none;
+  max-width: none !important;
 }
 
 /* TOC container */
@@ -139,6 +139,6 @@
   .main-content {
     margin-left: 0;
     margin-right: 0;
-    width: 100%;
+    max-width: none !important;
   }
 }
