@@ -76,35 +76,12 @@
     </div>
     <main class="main-content">
       <div class="chapter-navigation">
-        {% assign sorted_pages = site.pages | sort: 'path' %}
-        {% for page_iter in sorted_pages %}
-          {% if page_iter.path contains 'chapters/chp' %}
-            {% assign chapter_pages = chapter_pages | push: page_iter %}
-          {% endif %}
-        {% endfor %}
-        {% assign current_index = chapter_pages | index_of: page %}
-        {% assign previous_index = current_index | minus: 1 %}
-        {% assign next_index = current_index | plus: 1 %}
-        {% assign previous_page = chapter_pages | at: previous_index %}
-        {% assign next_page = chapter_pages | at: next_index %}
-
-        <!-- Log variables and messages -->
-        <p>Current Index: {{ current_index }}</p>
-        <p>Total Pages: {{ chapter_pages.size }}</p>
-        <p>Previous Page: {{ previous_page.url | relative_url }}</p>
-        <p>Next Page: {{ next_page.url | relative_url }}</p>
-
-        {% if current_index < sorted_pages.size | minus: 1 %} {% assign next_page=sorted_pages[current_index | plus: 1]
-          %} {% endif %} {% if current_index> 0 %}
-          <a href="{{ previous_page.url | relative_url }}" class="previous-chapter">上一章: {{ previous_page.title |
-            default:
-            previous_page.path | split: '/' | last | split: '.' | first }}</a>
-          {% endif %}
-
-          {% if current_index < sorted_pages.size | minus: 1 %} <a href="{{ next_page.url | relative_url }}"
-            class="next-chapter">下一章: {{ next_page.title | default: next_page.path | split: '/' | last | split: '.' |
-            first }}</a>
-            {% endif %}
+        {% if page.previous.url %}
+        <a href="{{ page.previous.url | relative_url }}" class="previous">上一章</a>
+        {% endif %}
+        {% if page.next.url %}
+        <a href="{{ page.next.url | relative_url }}" class="next">下一章</a>
+        {% endif %}
       </div>
       {{ content }}
     </main>
