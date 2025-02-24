@@ -72,7 +72,6 @@
 
 /* Main content */
 .main-content {
-  flex: 1;
   margin-left: 250px;
   margin-right: 250px;
   padding: 2rem 4rem;
@@ -80,8 +79,11 @@
   overflow-y: auto;
   height: 100vh;
   box-sizing: border-box;
-  width: 100%;
+  position: fixed;
+  left: 0;
+  right: 0;
 }
+
 /* TOC container */
 .toc-container {
   width: 250px;
