@@ -13,6 +13,7 @@ include_directories(${EIGEN3_INCLUDE_DIR})
 
 # extra 
 add_executable(eigen3version eigen3version.cpp)
+add_executable(matlab_eigen3_crush matlab_eigen3_crush.cpp) 
 
 # Chapter 1 examples
 add_executable(basic_matrix chp01/basic_matrix.cpp)
@@ -45,7 +46,7 @@ add_executable(advanced_features chp07/advanced_features.cpp)
 
 # Link Eigen to all targets
 foreach(target
-    eigen3version
+    eigen3version matlab_eigen3_crush
     basic_matrix matrix_arithmetic special_matrices
     matrix_operations matrix_decompositions
     vector_operations vector_advanced
