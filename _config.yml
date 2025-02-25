@@ -1,5 +1,5 @@
 # Site settings
-title: Eigen3 教程（施工中）
+title: Eigen3教程（施工）
 description: 一个实用的 Eigen C++ 线性代数库中文教程
 baseurl: "/eigen3tutorial" # 仓库名称
 url: "https://www.windtunnel.cn" # 如果有自定义域名可以在这里设置
@@ -23,6 +23,8 @@ plugins:
   - jekyll-sitemap
   - jekyll-remote-theme
   - jekyll-readme-index   # Add this plugin to use README.md as index
+  - jekyll-paginate       # Add this plugin to enable page.previous and page.next
+
 
 # Readme settings
 readme_index:

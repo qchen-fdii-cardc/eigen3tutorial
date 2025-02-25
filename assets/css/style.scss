@@ -9,7 +9,7 @@
 
 /* Layout */
 .wrapper {
-  display: flex !important;
+  display: flex;
   width: 100%;
   height: 100vh;
   overflow: hidden;
@@ -72,26 +72,59 @@
 
 /* Main content */
 .main-content {
-  flex: 1;
   margin-left: 250px;
+  margin-right: 250px;
   padding: 2rem 4rem;
   padding-top: 0;
   overflow-y: auto;
   height: 100vh;
   box-sizing: border-box;
-  width: calc(100% - 250px);
+  position: fixed;
+  left: 0;
+  right: 0;
+  max-width: none !important;
 }
 
-.main-content h1,
-.main-content h2,
-.main-content h3,
-.main-content h4,
-.main-content h5,
-.main-content h6 {
-  margin-top: 2rem;
-  margin-bottom: 1.5rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 1px solid #eaecef;
+main.main-content {
+  max-width: none !important;
+}
+
+/* TOC container */
+.toc-container {
+  width: 250px;
+  flex-shrink: 0;
+  background: #f8f9fa;
+  border-left: 1px solid #dee2e6;
+  height: 100vh;
+  position: fixed;
+  right: 0;
+  top: 0;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.toc-container h3 {
+  margin-top: 0;
+}
+
+.toc-container ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.toc-container li {
+  margin: 8px 0;
+}
+
+.toc-container a {
+  color: #24292e;
+  text-decoration: none;
+}
+
+.toc-container a:hover {
+  color: #0366d6;
 }
 
 /* Responsive adjustments */
@@ -102,16 +135,14 @@
     overflow: visible;
   }
 
-  .sidebar-container {
-    width: 100%;
-    height: auto;
-  }
-
-  .sidebar {
+  .sidebar-container,
+  .toc-container {
     display: none;
   }
 
   .main-content {
-    padding: 1rem;
+    margin-left: 0;
+    margin-right: 0;
+    max-width: none !important;
   }
 }

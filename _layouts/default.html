@@ -21,6 +21,27 @@
         elements[i].classList.add('mermaid');
       }
     });
+
+    // Generate TOC
+    document.addEventListener('DOMContentLoaded', function () {
+      const toc = document.getElementById('toc');
+      const content = document.querySelector('.main-content');
+      const headings = content.querySelectorAll('h2, h3');
+      headings.forEach(heading => {
+        const link = document.createElement('a');
+        link.href = `#${heading.id}`;
+        link.textContent = heading.textContent;
+        if (heading.tagName.toLowerCase() === "h2") {
+          link.style.marginLeft = '0px';
+          link.style.fontWeight = 'bold';
+        } else {
+          link.style.marginLeft = '2em';
+        }
+        const listItem = document.createElement('li');
+        listItem.appendChild(link);
+        toc.appendChild(listItem);
+      });
+    });
   </script>
 </head>
 
@@ -34,27 +55,16 @@
         <div class="sidebar-section">
           <h3>教程目录</h3>
           <ul>
-            <li><a href="{{ site.baseurl }}/chapters/chp01.html" {% if page.url contains 'chp01' %}class="active" {%
-                endif %}>1. 基础知识</a>
+            {% assign sorted_pages = site.pages | sort: 'path' %}
+            {% for page_iter in sorted_pages %}
+            {% if page_iter.path contains 'chapters/chp' %}
+            <li>
+              <a href="{{ page_iter.url | relative_url }}" {% if page_iter.url==page.url %}class="active" {% endif %}>
+                {{ page_iter.title | default: page_iter.path | split: '/' | last | split: '.' | first }}
+              </a>
             </li>
-            <li><a href="{{ site.baseurl }}/chapters/chp02.html" {% if page.url contains 'chp02' %}class="active" {%
-                endif %}>2. 矩阵操作</a>
-            </li>
-            <li><a href="{{ site.baseurl }}/chapters/chp03.html" {% if page.url contains 'chp03' %}class="active" {%
-                endif %}>3. 向量操作</a>
-            </li>
-            <li><a href="{{ site.baseurl }}/chapters/chp04.html" {% if page.url contains 'chp04' %}class="active" {%
-                endif %}>4. 线性方程</a>
-            </li>
-            <li><a href="{{ site.baseurl }}/chapters/chp05.html" {% if page.url contains 'chp05' %}class="active" {%
-                endif %}>5. 特征值</a>
-            </li>
-            <li><a href="{{ site.baseurl }}/chapters/chp06.html" {% if page.url contains 'chp06' %}class="active" {%
-                endif %}>6. 几何变换</a>
-            </li>
-            <li><a href="{{ site.baseurl }}/chapters/chp07.html" {% if page.url contains 'chp07' %}class="active" {%
-                endif %}>7. 高级特性</a>
-            </li>
+            {% endif %}
+            {% endfor %}
           </ul>
         </div>
         <div class="sidebar-section">
@@ -62,7 +72,7 @@
           <ul>
             <li><a href="{{ site.baseurl }}/">首页</a></li>
             <li><a href="https://github.com/qchen-fdii-cardc/eigen3tutorial">GitHub</a></li>
-            <li><a href="https://www.windtunnel.cn">大福是小强</a></li>
+            <li><a href="https://www.windtunnel.cn">技术写作练习</a></li>
           </ul>
         </div>
       </nav>
@@ -70,6 +80,10 @@
     <main class="main-content">
       {{ content }}
     </main>
+    <aside class="toc-container">
+      <h3>本章内容</h3>
+      <ul id="toc"></ul>
+    </aside>
   </div>
 </body>
 
