@@ -34,6 +34,8 @@
   box-sizing: border-box;
   height: 100%;
   overflow-y: auto;
+  position: relative;
+  min-height: 100vh;
 }
 
 .sidebar ul {
@@ -145,4 +147,10 @@ main.main-content {
     margin-right: 0;
     max-width: none !important;
   }
+}
+
+.quick-links {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
 }

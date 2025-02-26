@@ -13,24 +13,27 @@ int main()
     Eigen::Vector3f x, y, z;
     Eigen::RowVector3f a, b, c;
     Eigen::VectorXd v;
+
     double s;
 
     A << 1, 2, 3,
         4, 5, 6,
         7, 8, 9;
-    std::cout << "A = \n" << A << '\n';
-
+    std::cout << "A = \n"
+              << A << '\n';
 
     // change B's cols to 3
     B.resize(3, 9);
     B << A, A, A;
-    std::cout << "B = \n" << B << '\n';
+    std::cout << "B = \n"
+              << B << '\n';
     std::cout << "B.size() = " << B.size() << '\n';
     std::cout << "B.rows() = " << B.rows() << '\n';
     std::cout << "B.cols() = " << B.cols() << '\n';
 
     A.fill(1.0);
-    std::cout << "A = \n" << A << '\n';
+    std::cout << "A = \n"
+              << A << '\n';
 
     // Basic Usage
     std::cout << "x.size() = " << x.size() << '\n'; // length(x)
@@ -41,28 +44,49 @@ int main()
     std::cout << "C.rows() = " << C.rows() << '\n'; // size(C, 1)
     std::cout << "C.cols() = " << C.cols() << '\n'; // size(C, 2)
     int j = 1;
-    std::cout << "C = \n" << C << '\n';
+    std::cout << "C = \n"
+              << C << '\n';
 
-    std::cout << "I = \n" << Eigen::Matrix3d::Identity() << '\n';
+    std::cout << "I = \n"
+              << Eigen::Matrix3d::Identity() << '\n';
 
     C.setIdentity();
-    std::cout << "C = \n" << C << '\n';
+    std::cout << "C = \n"
+              << C << '\n';
 
     C.setZero();
-    std::cout << "C = \n" << C << '\n';
+    std::cout << "C = \n"
+              << C << '\n';
 
     C.setRandom();
-    std::cout << "C = \n" << C << '\n';
+    std::cout << "C = \n"
+              << C << '\n';
 
     C.setConstant(1.0);
-    std::cout << "C = \n" << C << '\n';
+    std::cout << "C = \n"
+              << C << '\n';
 
     C.setOnes();
-    std::cout << "C = \n" << C << '\n';
+    std::cout << "C = \n"
+              << C << '\n';
 
     v.setLinSpaced(11, .1, 1.0);
-    std::cout << "v = \n" << v << '\n';
+    std::cout << "v = \n"
+              << v << '\n';
 
     x.setLinSpaced(0, 1);
-    std::cout << "x = \n" << x << '\n';
+    std::cout << "x = \n"
+              << x << '\n';
+
+    C.setRandom();
+    C = C * C.transpose();
+    auto ldlt = C.ldlt();
+    std::cout << "C = \n"
+              << C << '\n';
+    std::cout << "ldlt.matrixL = \n"
+              << ldlt.matrixL().toDenseMatrix() << '\n';
+    std::cout << "ldlt.matrixU = \n";
+    std::cout << ldlt.matrixU().toDenseMatrix() << '\n';
+    std::cout << "ldlt.matrixLDLT = \n"
+              << ldlt.matrixLDLT() << '\n';
 }
